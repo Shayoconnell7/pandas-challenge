@@ -116,13 +116,24 @@ After importing dependencies and reading the csv file as purchase_data, the firs
 ### Most Popular Items
 
 * Identify the 5 most popular items by purchase count, then list (in a table):
+
   * Item ID
   * Item Name
-  * Purchase Count
-  * Item Price
-  * Total Purchase Value
+  - I pulled the Item ID, Item Name, and Price columns from purchase_data and stored them in items.
+  - I then used .groupby on Item Id and Item Name from items, creating grouped_items.
 
-### Most Profitable Items
+  * Purchase Count
+  - I used .count on the Item Names column in grouped_items, and stored the results as purchase_count.
+  * Item Price
+  - I used .mean on the Price column in grouped_items, and stored the results as item_price.
+  * Total Purchase Value
+  - I used .sum on the Price column in grouped_items, and stored the results as total_purchase_value.
+
+  - I then created a new data frame called popular_items with appropriate column titles, and plugged in the variables containing the results of my calculations.
+  - I then created a new dataframe called sorted_items using .sort_values that presents the same data but sorted by Purchase Count in descending order.
+  - Finally, I cleaned up the formatting where appropriate.
+
+### Most Profitable Itemsdescription
 
 * Identify the 5 most profitable items by total purchase value, then list (in a table):
   * Item ID
@@ -131,9 +142,12 @@ After importing dependencies and reading the csv file as purchase_data, the firs
   * Item Price
   * Total Purchase Value
 
-As final considerations:
+  - I simply created a new sorted dataframe called profitable_items using .sort_values on popular_items, sorting by Total Purchase Value in descending order.
+  - Finally, I cleaned up the formatting where appropriate.
 
-* You must use the Pandas Library and the Jupyter Notebook.
-* You must submit a link to your Jupyter Notebook with the viewable Data Frames.
-* You must include a written description of three observable trends based on the data.
-* See [Example Solution](HeroesOfPymoli/HeroesOfPymoli_starter.ipynb) for a reference on expected format.
+
+### Description of three observable trends
+
+- The 20-24 demographic spent more than twice the amount of the next highest spending (15-19), making them by far the most profitable age group. However, their average spent per person was not the highest, so working towards increasing number of players in other demographics may be a good idea.
+- Similarly, total revenue from 'Males' was mnuch higher than the other gender distinctions, but their average spent per person was actually the lowest - perhaps increasing number of 'Female' and 'Other' players would be a good move.
+- Certain games seem to be far more profitable than others despite similar pricing (high purchase numbers). It would be worth investigating differences in marketing campaign techniques or target demographics to look for any correlations. 
