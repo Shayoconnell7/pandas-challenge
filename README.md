@@ -78,7 +78,7 @@ After importing dependencies and reading the csv file as purchase_data, the firs
 ### Purchasing Analysis (Age)
 * The below each broken by Age Group:
 
-- Since most of these calculations did not need a list of unique players, I repeated the binning, .cut, groupby Age Range process again, this time on purchase_data, creating purchases_by_age (with accurate purchase totals, but some players listed multiple times).
+- Since most of these calculations did not need a list of unique players, I repeated the binning, .cut, .groupby Age Range process again, this time on purchase_data, creating purchases_by_age (with accurate purchase totals, but some players listed multiple times).
 
   * Purchase Count
   - I found this by using .count on the Purchase ID column in purchase_data for each age group, and stored the results as total_purchases_ba.
@@ -133,7 +133,7 @@ After importing dependencies and reading the csv file as purchase_data, the firs
   - I then created a new dataframe called sorted_items using .sort_values that presents the same data but sorted by Purchase Count in descending order.
   - Finally, I cleaned up the formatting where appropriate.
 
-### Most Profitable Itemsdescription
+### Most Profitable Items
 
 * Identify the 5 most profitable items by total purchase value, then list (in a table):
   * Item ID
